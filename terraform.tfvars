@@ -14,8 +14,10 @@ policy_name = "ec2s3"
 k8s_namespace = "challenge"
 iam_user = "challengeuser"
 
-map_users = [ {
+map_users = [ 
+  {
   userarn = "arn:aws:iam::639232547460:user/eksrbacktest"
   username = "eksrbacktest"
   groups   = ["system:masters"]
-}, ]
+  }, 
+]
