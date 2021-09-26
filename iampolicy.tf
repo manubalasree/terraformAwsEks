@@ -35,3 +35,29 @@ EOF
     PolicyDescription = "Policy created using heredoc policy"
   }
 }
+
+###############################
+# IAM assumable role for admin
+###############################
+module "iam_assumable_role_admin" {
+  source  = "terraform-aws-modules/iam/aws//modules/iam-assumable-role-with-oidc"
+  version = "4.6.0"
+  # insert the 3 required variables here
+
+  create_role = true
+
+  role_name = var.role_name
+
+  tags = {
+    Role = "role-with-oidc"
+  }
+
+  provider_url  = module.eks.cluster_oidc_issuer_url
+  # provider_urls = ["oidc.eks.eu-west-1.amazonaws.com/id/AA9E170D464AF7B92084EF72A69B9DC8"]
+
+  role_policy_arns = [
+    module.iam_policy.arn,
+  ]
+
+ # oidc_fully_qualified_subjects = ["system:serviceaccount:default:sa1", "system:serviceaccount:default:sa2"]
+}
