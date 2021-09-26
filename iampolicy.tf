@@ -40,7 +40,6 @@ EOF
 ###############################
 module "iam_assumable_role_admin" {
   source  = "terraform-aws-modules/iam/aws//modules/iam-assumable-role-with-oidc"
-  version = "4.6.0"
   # insert the 3 required variables here
 
   create_role = true
