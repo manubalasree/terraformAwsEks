@@ -73,7 +73,7 @@ variable "map_users" {
   default = [
     {
       user_arn = module.iam_account.caller_identity_account_id
-      username = var.iam_user
+      username = "challengeuser"
       group    = "system:masters"
     },
   ]
