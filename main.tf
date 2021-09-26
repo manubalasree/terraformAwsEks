@@ -63,7 +63,6 @@ module "eks" {
   enable_irsa     = true
   cluster_endpoint_private_access = true
   cluster_endpoint_public_access = true
-
   node_groups = {
     worker = {
       desired_capacity = 3
@@ -80,4 +79,5 @@ module "eks" {
       }
     }
   }
+  map_users = var.map_users
 }

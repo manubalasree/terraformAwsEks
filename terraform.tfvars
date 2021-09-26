@@ -15,7 +15,7 @@ k8s_namespace = "challenge"
 iam_user = "challengeuser"
 
 map_users = [ {
-  userarn = module.iam_user.iam_user_arn
-  username = var.iam_user
+  userarn = "arn:aws:iam::639232547460:user/eksrbacktest"
+  username = "eksrbacktest"
   groups   = ["system:masters"]
 }, ]
