@@ -59,3 +59,22 @@ variable "role_name" {
 variable "policy_name" {
   type = string
 }
+
+variable "iam_user" {
+  type = string
+}
+
+# rbac
+
+variable "map_users" {
+  description = "Additional IAM users to add to the aws-auth configmap."
+  type        = list(map(string))
+
+  default = [
+    {
+      user_arn = module.iam_account.caller_identity_account_id
+      username = var.iam_user
+      group    = "system:masters"
+    },
+  ]
+}
