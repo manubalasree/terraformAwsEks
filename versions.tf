@@ -16,12 +16,11 @@ terraform {
 }
 */
 terraform {
-
+  required_version = ">= 0.14"
 # version constraints
   required_providers {
     local      = ">= 1.4"
     random     = ">= 2.1"
-    kubernetes = ">= 1.18, <= 1.20"
+    kubernetes = "<= 1.20"
   }
-  required_version = ">= 0.14"
 }
