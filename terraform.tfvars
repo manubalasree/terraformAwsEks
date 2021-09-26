@@ -8,3 +8,7 @@ vpc_tags = {
   "Terraform" = "true"
   Environment = "Dev"
 }
+
+role_name = "challenge-ns-role"
+policy_name = "ec2s3"
+k8s_namespace = "challenge"

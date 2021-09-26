@@ -43,3 +43,19 @@ variable "instance_types" {
   type    = list(string)
   default = ["t3.xlarge"]
 }
+
+/*
+oidc
+*/
+
+variable "k8s_namespace" {
+  type = string
+}
+
+variable "role_name" {
+  type = string
+}
+
+variable "policy_name" {
+  type = string
+}
