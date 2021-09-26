@@ -69,12 +69,4 @@ variable "iam_user" {
 variable "map_users" {
   description = "Additional IAM users to add to the aws-auth configmap."
   type        = list(map(string))
-
-  default = [
-    {
-      user_arn = module.iam_user.iam_user_arn
-      username = "challengeuser"
-      group    = "system:masters"
-    },
-  ]
 }
