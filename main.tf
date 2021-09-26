@@ -35,8 +35,6 @@ module vpc {
   azs             = var.azs
   public_subnets  = var.public_subnets
   private_subnets = var.private_subnets
-  cluster_endpoint_private_access = true
-  cluster_endpoint_public_access = true
 
   # Have one NAT Gateway per AZ to give private subnets access to the external internet
   enable_nat_gateway     = true
@@ -63,6 +61,8 @@ module "eks" {
   subnets         = module.vpc.private_subnets
   vpc_id          = module.vpc.vpc_id
   enable_irsa     = true
+  cluster_endpoint_private_access = true
+  cluster_endpoint_public_access = true
 
   node_groups = {
     worker = {
