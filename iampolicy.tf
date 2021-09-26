@@ -2,8 +2,8 @@
 # IAM policy
 #########################################
 module "iam_policy" {
-  source = "terraform-aws-modules/iam/aws"
-
+  
+  source  = "terraform-aws-modules/iam/aws//modules/iam-policy"
   name        = var.policy_name
   path        = "/"
   description = "s3 ec2 policy"
@@ -30,7 +30,6 @@ module "iam_policy" {
     ]
   }
 EOF
-
   tags = {
     PolicyDescription = "Policy created using heredoc policy"
   }
