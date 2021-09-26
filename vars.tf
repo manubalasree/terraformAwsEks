@@ -71,3 +71,4 @@ variable "map_users" {
     username = string
     groups   = list(string)
   }))
+}
