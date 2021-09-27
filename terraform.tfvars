@@ -11,13 +11,15 @@ vpc_tags = {
 
 role_name = "challenge-ns-role"
 policy_name = "ec2s3"
-k8s_namespace = "challenge"
+k8s_namespace = "challenge-ns"
 iam_user = "challengeuser"
+
+
 
 map_users = [ 
   {
   userarn = "arn:aws:iam::639232547460:user/eksrbacktest"
   username = "eksrbacktest"
-  groups   = ["system:masters"]
+  groups   = ["system:viewer"]
   }, 
 ]
