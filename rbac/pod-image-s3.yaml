@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: eks-irsa-test
+  namespace: challenge
+spec:
+  serviceAccountName: challenge-sa
+  containers:
+  - name: eks-irsa-test
+    image: amazon/aws-cli:latest
+    command: ["sleep"]
+    args: ["3600"]
+  restartPolicy: Never

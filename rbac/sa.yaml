@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: challenge-sa
+  namespace: challenge
+  annotations:
+          eks.amazonaws.com/role-arn: arn:aws:iam::639232547460:role/challenge-ns-role
