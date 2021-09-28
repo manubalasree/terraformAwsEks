@@ -14,7 +14,7 @@ module "iam_policy" {
     "Statement": [
       {
         "Action": [
-          "s3:ListBucket",
+          "s3:ListBuckets",
           "s3:GetObject"
        ],
         "Effect": "Allow",
