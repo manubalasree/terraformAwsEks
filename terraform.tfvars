@@ -20,5 +20,6 @@ map_users = [
   {
   userarn = "arn:aws:iam::639232547460:user/eksrbacktest"
   username = "eksrbacktest"
+  groups   = ["system:authenticated"]
   }, 
 ]
