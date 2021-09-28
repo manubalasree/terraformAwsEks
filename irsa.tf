@@ -5,7 +5,7 @@ resource "kubernetes_service_account" "challenge-sa" {
     name = "challenge-sa"
     namespace = "challenge"
     annotations = {
-      "eks.amazonaws.com/role-arn" = module.irsa.arn
+      "eks.amazonaws.com/role-arn" = module.irsa[0].arn
     }
   }
   automount_service_account_token = true
