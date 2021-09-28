@@ -1,15 +1,4 @@
 # https://registry.terraform.io/modules/Young-ook/eks/aws/latest/submodules/iam-role-for-serviceaccount
-
-resource "kubernetes_service_account" "challenge-sa" {
-  metadata {
-    name = "challenge-sa"
-    namespace = "challenge"
-    annotations = {
-      "eks.amazonaws.com/role-arn" = module.irsa[0].arn
-    }
-  }
-  automount_service_account_token = true
-}
 module "irsa" {
   source  = "Young-ook/eks/aws//modules/iam-role-for-serviceaccount"
 
